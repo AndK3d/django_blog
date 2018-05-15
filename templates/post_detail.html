@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block head_title %} {{post.title}} | {{block.super}} {% endblock head_title %}
+
+{% block content %}
+    {{ post.title }} <br>
+    {{ post.content }} <br>
+    {{ post.updated }} <br>
+    {{ post.timestamp }} <br>
+{% endblock content %}
