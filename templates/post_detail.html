@@ -3,7 +3,7 @@
 {% block head_title %} {{post.title}} | {{block.super}} {% endblock head_title %}
 
 {% block content %}
-<div class='col-sm-6 col-sm-offset-3'>
+<div class='col-sm-6 offset-sm-3'>
     <h1> {{ post.title }} <small><small>{{ post.timestamp }}</small></small> </h1>
 
     {{ post.content|linebreaks }} <br>

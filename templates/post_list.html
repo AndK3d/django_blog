@@ -1,16 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-     <h1>{{ title }}</h1>
-        {% for post in post_list %}
-        <div class='col-sm-4' >
-        <a href='{{post.get_absolute_url}}'>{{post.title}}</a><br>
-        {{post.content|linebreaks|truncatechars:120}}<br>
-        {{post.timestamp}}<br>
-        {{post.updated}}<br>
-        {{post.id}}<br>
-        </div>
+
+<div class="col-sm-6 offset-sm-3">
+    <h1>{{ title }}</h1>
+    {% for post in post_list %}
+
+<div class="card">
+    <!--
+  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+    -->
+  <div class="card-body">
+    <h5 class="card-title">{{post.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{post.timestamp}} ago</h6>
+    <p class="card-text">{{post.content|linebreaks|truncatechars:120}}</p>
+    <a href="{{post.get_absolute_url}}" class="btn btn-primary">Read more</a>
+  </div>
+</div>
+    <br/>
+
+
     {% endfor %}
+</div>
 
     <div class="pagination">
         <span class="step-links">
