@@ -7,7 +7,8 @@ app_name="posts"
 urlpatterns = [
     path('', post_list, name='list'),
     path('create/',  post_create),
-    path('<int:id>/',  post_detail, name='detail'),
-    path('<int:id>/edit/', post_update, name='update'),
-    path('<int:id>/delete/', post_delete),
+    # path('<int:id>/',  post_detail, name='detail'),
+    path('<slug>/',  post_detail, name='detail'),
+    path('<slug>/edit/', post_update, name='update'),
+    path('<slug>/delete/', post_delete),
 ]

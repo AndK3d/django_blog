@@ -7,9 +7,13 @@
     {% for post in post_list %}
 
 <div class="card">
-    <!--
-  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-    -->
+
+    {% if post.image %}
+
+    <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
+
+    {% endif %}
+
   <div class="card-body">
     <h5 class="card-title">{{post.title}}</h5>
     <h6 class="card-subtitle mb-2 text-muted">{{post.timestamp}} ago</h6>
